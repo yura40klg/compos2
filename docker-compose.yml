@@ -1,15 +1,17 @@
-version: "3.7"
+version: "2"
 services:
   dev:
     build: dev/
+    links:
+      - prod
     volumes:
-      - /share:/var/boxfuse/target/
+      - /share:/var/share/
   prod:
     build: prod/
-    volumes:
-      - /share:/usr/local/tomcat9/webapps
     ports:
       - "8080:8080"
-volumes:
-  share:
+    volumes:
+      - /share:/usr/local/tomcat9/webapps
+
+
 
