@@ -6,5 +6,5 @@ RUN apt-get update \
    && cd /var/boxfuse \
    && mvn package \
    && mkdir /var/share \
-   && cp /var/boxfuse/target/*.war /var/share/
+   && cp /var/boxfuse/target/hello-1.0.war /var/share/
 CMD ["mvn"]

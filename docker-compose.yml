@@ -3,11 +3,11 @@ services:
   dev:
     build: dev/
     volumes:
-      - /share:/var/share
+      - ./share:/var/share
   prod:
     build: prod/
     volumes:
-      - /share:/usr/local/tomcat9/webapps
+      - ./share:/usr/local/tomcat9/webapps
     ports:
       - "8080:8080"
 
