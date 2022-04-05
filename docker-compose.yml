@@ -5,13 +5,14 @@ services:
     links:
       - prod
     volumes:
-      - /share:/var/share/
+      - /share1:/var/share/
   prod:
     build: prod/
     ports:
       - "8080:8080"
     volumes:
-      - /share:/usr/local/tomcat9/webapps
-
+      - /share1:/usr/local/tomcat9/
+ volumes:
+   share1:
 
 
