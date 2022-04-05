@@ -5,6 +5,6 @@ RUN apt-get update \
    && git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git /var/boxfuse \
    && cd /var/boxfuse \
    && mvn package \
-   && mkdir /var/share \
-   && cp /var/boxfuse/target/hello-1.0.war /var/share/
+#  && mkdir /var/share \
+#   && cp /var/boxfuse/target/hello-1.0.war /var/share/
 CMD ["mvn"]

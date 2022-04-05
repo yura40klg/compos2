@@ -3,7 +3,7 @@ services:
   dev:
     build: dev/
     volumes:
-      - /share:/var/share
+      - /share:/var/boxfuse/target/
   prod:
     build: prod/
     volumes:
