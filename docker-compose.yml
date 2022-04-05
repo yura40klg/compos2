@@ -7,7 +7,7 @@ services:
   prod:
     build: prod/
     volumes:
-      - ./share:/usr/local/tomcat9/webapps
+      - /share:/usr/local/tomcat9/webapps
     ports:
       - "8080:8080"
 volumes:
