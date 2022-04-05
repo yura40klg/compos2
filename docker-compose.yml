@@ -11,7 +11,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - /share1:/usr/local/tomcat9/
+      - /share1:/usr/local/tomcat9/webapps/
  volumes:
    share1:
 
