@@ -1,18 +1,14 @@
-version: "2"
+version: '2'
 services:
-  dev:
+   dev:
     build: dev/
-    links:
-      - prod
     volumes:
-      - /share1:/var/share/
-  prod:
+      - share1:/var/share/
+   prod:
     build: prod/
     ports:
       - "8080:8080"
     volumes:
-      - /share1:/usr/local/tomcat9/webapps/
- volumes:
-   share1:
-
-
+      - share1:/usr/local/tomcat9/webapps/
+volumes:
+  share1:
