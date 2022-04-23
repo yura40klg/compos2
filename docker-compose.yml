@@ -4,11 +4,24 @@ services:
     build: dev/
     volumes:
       - share1:/var/share/
+      - share2:/var/app/Config.properties
    prod:
     build: prod/
     ports:
       - "8080:8080"
     volumes:
       - share1:/usr/local/tomcat9/webapps/
+      - share2:/usr/local/tomcat9/ROOT
+   db:
+    image: mysql:5.7
+    container_name: db
+    restart: always
+    environment:
+          - MYSQL_ROOT_PASSWORD=qwerty
+          - MYSQL_DATABASE=my_db
+          - MYSQL_USER=db_user
+          - MYSQL_PASSWORD=qwerty
+
 volumes:
   share1:
+  share2:
