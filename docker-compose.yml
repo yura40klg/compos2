@@ -1,7 +1,7 @@
 version: '2'
 services:
    dev:
-    image: maven
+    image: maven:latest
     command: >
              bash -c "git clone https://github.com/yura40klg/42paas.git /var/app 
              && cd /var/app && mvn clean && mvn install && mkdir /var/share && mkdir /var/share/cfg
@@ -11,7 +11,7 @@ services:
       - share1:/var/share/
       - share2:/var/share/cfg/Config.properties
    prod:
-    image: tomcat
+    image: tomcat: latest
     ports:
       - "8080:8080"
     volumes:
