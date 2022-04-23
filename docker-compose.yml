@@ -1,17 +1,17 @@
 version: '2'
 services:
    dev:
-    image: maven:latest
+    image: maven:3.3
     command: >
-             bash -c "git clone https://github.com/yura40klg/42paas.git /var/app 
-             && cd /var/app && mvn clean && mvn install && mkdir /var/share && mkdir /var/share/cfg
+             bash -c "git clone https://github.com/yura40klg/42paas.git /var/app
+             && cd /var/app && mvn clean && mvn install
              && cp /var/app/target/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war /var/share/app.war
              && cp /var/app//WebContent/Config.properties /var/share/cfg/Config.properties"
     volumes:
       - share1:/var/share/
-      - share2:/var/share/cfg/Config.properties
+      - share2:/var/share/cfg/
    prod:
-    image: tomcat: latest
+    image: tomcat:9
     ports:
       - "8080:8080"
     volumes:
@@ -26,7 +26,8 @@ services:
           - MYSQL_DATABASE=my_db
           - MYSQL_USER=db_user
           - MYSQL_PASSWORD=qwerty
-
+    ports:
+      - 3306
 volumes:
   share1:
   share2:
